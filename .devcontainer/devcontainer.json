@@ -1,36 +1,25 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.236.0/containers/azure-static-web-apps
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-	"name": "Azure Static Web Apps - vanilla sample",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			// Please look at runtime version support to make sure you're using compatible versions
-			// https://docs.microsoft.com/en-us/azure/azure-functions/supported-languages#languages-by-runtime-version
-			"NODE_VERSION": "16",
-			"CORE_TOOLS_VERSION": "4"
-		}
+	"name": "Node.js",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers-community/npm-features/prettier:1": {}
 	},
-	"forwardPorts": [ 7071, 4280 ],
 
-	// Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				"ms-azuretools.vscode-azurefunctions",
-				"ms-azuretools.vscode-azurestaticwebapps",
-				"ms-dotnettools.csharp",
-				"ms-python.python",
-				"dbaeumer.vscode-eslint"
-			]
-		}
-	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "node --version",
+	"postCreateCommand": "npm install"
 
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
