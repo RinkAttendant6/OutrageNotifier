@@ -6,6 +6,6 @@
     "start": "node index.mjs"
   },
   "dependencies": {
-    "puppeteer": "^25.1"
+    "puppeteer": "^25.18"
   }
 }
